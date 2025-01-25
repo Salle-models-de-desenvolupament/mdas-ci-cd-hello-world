@@ -10,7 +10,7 @@ public class HelloWorldTest {
     @Test
     public void shouldReturnHelloWorld() {
         HelloWorld helloWorld = new HelloWorld();
-        Assertions.assertThat(helloWorld.hello()).isEqualTo("Hello World!");
+        Assertions.assertThat(helloWorld.hello().getBody()).isEqualTo("Hello World!");
     }
 
 }
