@@ -32,9 +32,11 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build
         run: mvn clean install
-      - name: Unit tests
-        run: mvn test
+      - name: Run tests
+        run: mvn clean test -Pcoverage
+      - name: JaCoCo report
+        run: mvn jacoco:report -Pcoverage
       - name: SonarCloud Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Pcoverage -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
