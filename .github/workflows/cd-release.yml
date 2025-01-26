@@ -197,6 +197,7 @@ jobs:
         image: ${{ steps.push-image.outputs.registry-path }}
         namespace: ${{ env.OPENSHIFT_NAMESPACE }}
         port: ${{ env.APP_PORT }}
+        clean_deployments: 'false'
 
     - name: Print application URL
       env:
