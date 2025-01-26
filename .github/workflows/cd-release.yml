@@ -45,8 +45,10 @@ env:
   IMAGE_TAGS: ""
 
 on:
-  # https://docs.github.com/en/actions/reference/events-that-trigger-workflows
-  workflow_dispatch:
+  workflow_run:
+    workflows: ['CI Release']
+    types: [completed]
+    status: success
 
 jobs:
   # 🖊️ EDIT if you want to run vulnerability check on your project before deploying
