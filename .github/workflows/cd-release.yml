@@ -159,6 +159,21 @@ jobs:
           dockerfiles: |
             ./src/main/docker/Dockerfile.jvm
 
+      - name: Log variables in console
+        id: log-variables
+        run: |
+          echo "IMAGE_REGISTRY=${IMAGE_REGISTRY}"
+          echo "IMAGE_REGISTRY_USER=${IMAGE_REGISTRY_USER}"
+          echo "IMAGE_REGISTRY_PASSWORD=${IMAGE_REGISTRY_PASSWORD}"
+          echo "OPENSHIFT_SERVER=${OPENSHIFT_SERVER}"
+          echo "OPENSHIFT_TOKEN=${OPENSHIFT_TOKEN}"
+          echo "OPENSHIFT_NAMESPACE=${OPENSHIFT_NAMESPACE}"
+          echo "APP_NAME=${APP_NAME}"
+          echo "APP_PORT=${APP_PORT}"
+          echo "IMAGE_TAGS=${IMAGE_TAGS}"
+          echo "ROUTE=${ROUTE}"
+          echo "SELECTOR=${SELECTOR}"
+
       # https://github.com/redhat-actions/push-to-registry#readme
       - name: Push to registry
         id: push-image
