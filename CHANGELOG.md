@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.2.0...v1.2.1) (2025-01-26)
+
+
+### Bug Fixes
+
+* **ci:** change jakoko xml path ([6d42a14](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/6d42a14a6acc9ff0aa0d70d7b3469ba65812e1ce))
+
 # [1.2.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.1.0...v1.2.0) (2025-01-26)
 
 
