@@ -195,7 +195,7 @@ jobs:
 
     - name: Deploy application
       run: |
-        oc new-app {{ env.IMAGE_REGISTRY }}/${{ env.APP_NAME }}:${{ env.DEPLOY_IMAGE_TAG }} \
+        oc new-app ${{ env.IMAGE_REGISTRY }}/${{ env.APP_NAME }}:${{ env.DEPLOY_IMAGE_TAG }} \
           --name=${{ env.APP_NAME }} \
           -n ${{ env.OPENSHIFT_NAMESPACE }}
 
