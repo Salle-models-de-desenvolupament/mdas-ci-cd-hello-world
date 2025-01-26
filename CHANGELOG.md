@@ -1,3 +1,11 @@
+## [1.2.3](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.2.2...v1.2.3) (2025-01-26)
+
+
+### Bug Fixes
+
+* **ci/cd:** env variables ([de18e7c](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/de18e7c1c141ae7bebb694bf5e3e54153a55f25e))
+* **ci/cd:** semantic version token ([ef144d0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/ef144d0f3a833d13c88e5ba5d98b1d80e26e7c31))
+
 ## [1.2.2](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.2.1...v1.2.2) (2025-01-26)
 
 
