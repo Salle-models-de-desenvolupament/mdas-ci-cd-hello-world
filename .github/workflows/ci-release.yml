@@ -104,7 +104,7 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Publish artifact
-        run: mvn compile jib:build -Djib.to.auth.username={{ env.IMAGE_REGISTRY_USER }} -Djib.to.auth.password={{ env.IMAGE_REGISTRY_PASSWORD }}
+        run: mvn compile jib:build -Djib.to.auth.username=$IMAGE_REGISTRY_USER -Djib.to.auth.password=$IMAGE_REGISTRY_PASSWORD
       - name: Trigger CD Pipeline
         if: ${{ success() }}
         run: |
