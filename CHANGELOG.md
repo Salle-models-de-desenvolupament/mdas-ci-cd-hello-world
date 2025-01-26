@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.2.1...v1.2.2) (2025-01-26)
+
+
+### Bug Fixes
+
+* **ci:** remove unrequired step ([fbe6b20](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/fbe6b20bbf557f32d862b423d912ae6bef36fb7d))
+
 ## [1.2.1](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.2.0...v1.2.1) (2025-01-26)
 
 
