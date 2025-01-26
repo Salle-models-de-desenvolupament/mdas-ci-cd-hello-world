@@ -193,6 +193,8 @@ jobs:
 
     - name: Deploy application
       run: |
+        echo "Deploying ${{ env.APP_NAME }} to ${{ env.OPENSHIFT_NAMESPACE }}"
+        echo "Using image ${{ steps.push-image.outputs.registry-path }}"
         oc new-app ${{ steps.push-image.outputs.registry-path }} \
           --name=${{ env.APP_NAME }} \
           -n ${{ env.OPENSHIFT_NAMESPACE }}
