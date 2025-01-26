@@ -1,3 +1,22 @@
+# [1.2.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.1.0...v1.2.0) (2025-01-26)
+
+
+### Bug Fixes
+
+* **build:** add clean deployments ([183a140](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/183a1403563de94cb20463593b80dc8534e54304))
+* **build:** build project before build form docker ([c00a8a9](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/c00a8a9aa602a067109764a1af7ed82cce7e9789))
+* **build:** cd secrets ([aad459d](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/aad459d0d20d0e8e62706a0c9e4d466098417e24))
+* **build:** update java version ([99bc140](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/99bc140797a256bbb754bb312d7e2673f87cbef5))
+* **build:** view variables used ([b643a6a](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/b643a6a74e721045f9f095f18e3baaf81e98f704))
+* **cd:** add dockerfile reference ([ee5771f](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/ee5771f28b9ec01356ee4c8e28aaea0734ca4e07))
+* **mvn:** resolve mvnw issue ([3e98bed](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/3e98bede1012ef2fc9a13871059f34007447a0bd))
+
+
+### Features
+
+* **api:** change hello endpoint response ([e17117e](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/e17117e18d99e989a84e0e384c33985dc943d020))
+* **api:** change springboot to quark ([e0756f5](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/e0756f529d299c2d091d7ede5393384759dc3b72))
+
 # [1.1.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.0.1...v1.1.0) (2025-01-26)
 
 
