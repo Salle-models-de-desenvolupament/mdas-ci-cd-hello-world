@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.0.0...v1.0.1) (2025-01-26)
+
+
+### Bug Fixes
+
+* **build:** remove publishing artifact ([be14c77](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/be14c77ee0eb278bd114f4f7a441dabd19ea3a65))
+
 # 1.0.0 (2025-01-26)
 
 
