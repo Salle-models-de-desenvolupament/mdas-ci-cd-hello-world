@@ -5,6 +5,11 @@ env:
   IMAGE_REGISTRY_USER: ${{ secrets.IMAGE_REGISTRY_USER }}
   IMAGE_REGISTRY_PASSWORD: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
 
+  OPENSHIFT_SERVER: ${{ secrets.OPENSHIFT_SERVER }}
+  OPENSHIFT_TOKEN: ${{ secrets.OPENSHIFT_TOKEN }}
+  OPENSHIFT_NAMESPACE: "ivan-jimeno-ramirez1-dev"
+
+
   APP_NAME: ""
   IMAGE_TAGS: ""
   DEPLOY_IMAGE_TAG: ""
@@ -173,6 +178,7 @@ jobs:
     name: Build and deploy to OpenShift
     runs-on: ubuntu-latest
     environment: production
+    needs: [artifact]
 
     outputs:
       ROUTE: ${{ steps.deploy-and-expose.outputs.route }}
