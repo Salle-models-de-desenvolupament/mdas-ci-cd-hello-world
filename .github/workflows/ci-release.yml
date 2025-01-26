@@ -58,8 +58,6 @@ jobs:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
-      - name: JaCoCo report
-        run: mvn jacoco:report -Pcoverage
       - name: SonarCloud Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
