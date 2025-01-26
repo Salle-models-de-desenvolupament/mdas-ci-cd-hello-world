@@ -187,17 +187,19 @@ jobs:
         insecure_skip_tls_verify: true
         namespace: ${{ env.OPENSHIFT_NAMESPACE }}
 
-    # This step should create a deployment, service, and route to run your app and expose it to the internet.
-    # https://github.com/redhat-actions/oc-new-app#readme
-    - name: Create and expose app
-      id: deploy-and-expose
-      uses: redhat-actions/oc-new-app@v1
-      with:
-        app_name: ${{ env.APP_NAME }}
-        image: ${{ steps.push-image.outputs.registry-path }}
-        namespace: ${{ env.OPENSHIFT_NAMESPACE }}
-        port: ${{ env.APP_PORT }}
-        clean_deployments: 'false'
+    - name: Clean previous deployments
+      run: |
+        oc delete deployment,service,route -l app=${{ env.APP_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }} --ignore-not-found=true
+
+    - name: Deploy application
+      run: |
+        oc new-app ${{ steps.push-image.outputs.registry-path }} \
+          --name=${{ env.APP_NAME }} \
+          -n ${{ env.OPENSHIFT_NAMESPACE }}
+
+    - name: Expose service
+      run: |
+        oc expose service ${{ env.APP_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }}
 
     - name: Print application URL
       env:
