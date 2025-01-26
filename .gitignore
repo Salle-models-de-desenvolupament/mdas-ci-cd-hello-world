@@ -2,3 +2,5 @@
 ## Maven
 ##############################
 target/
+
+node_modules

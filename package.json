@@ -1,8 +1,7 @@
 {
-  "name": "java-project",
-  "version": "0.0.0",
-  "private": true,
-  "devDependencies": {
-    "semantic-release": "^21.0.0"
+  "dependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.1",
+    "semantic-release": "^24.2.1"
   }
 }
