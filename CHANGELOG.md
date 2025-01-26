@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.0.1...v1.1.0) (2025-01-26)
+
+
+### Features
+
+* **api:** replace springboot to quarkus ([f93ac25](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/f93ac25c8c900ad108c1a1141ee331dfd1f27771))
+
 ## [1.0.1](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.0.0...v1.0.1) (2025-01-26)
 
 
