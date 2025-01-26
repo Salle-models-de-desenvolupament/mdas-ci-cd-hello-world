@@ -24,7 +24,7 @@
 
 # 👋 Visit our GitHub organization at https://github.com/redhat-actions/ to see our actions and provide feedback.
 
-name: OpenShift
+name: CD Release
 
 env:
   OPENSHIFT_SERVER: ${{ secrets.OPENSHIFT_SERVER }}
@@ -47,9 +47,6 @@ env:
 on:
   # https://docs.github.com/en/actions/reference/events-that-trigger-workflows
   workflow_dispatch:
-  push:
-    # Edit to the branch(es) you want to build and deploy on each push.
-    branches: [ "main" ]
 
 jobs:
   # 🖊️ EDIT if you want to run vulnerability check on your project before deploying
