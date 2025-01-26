@@ -37,7 +37,7 @@ env:
 
   # 🖊️ EDIT to change the image registry settings.
   # Registries such as GHCR, Quay.io, and Docker Hub are supported.
-  IMAGE_REGISTRY: ghcr.io/${{ secrets.QUAY_REGISTRY }}
+  IMAGE_REGISTRY: ${{ secrets.QUAY_REGISTRY }}
   IMAGE_REGISTRY_USER: ${{ secrets.QUAY_USER }}
   IMAGE_REGISTRY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
 
@@ -130,7 +130,7 @@ jobs:
       id: push-image
       uses: redhat-actions/push-to-registry@v2
       with:
-        image: mdas-hello-world
+        image: ${{ env.IMAGE_REGISTRY }}/mdas-hello-world
         tags: ${{ env.IMAGE_TAGS }}
         registry: ${{ env.IMAGE_REGISTRY }}
         username: ${{ env.IMAGE_REGISTRY_USER }}
