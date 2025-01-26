@@ -129,6 +129,8 @@ jobs:
         run: npx semantic-release
       - name: Obtener versión
         id: get_version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: echo "VERSION=$(npx semantic-release --dry-run | grep "next release" | awk '{print $4}')" >> $GITHUB_ENV
   
   artifact:
