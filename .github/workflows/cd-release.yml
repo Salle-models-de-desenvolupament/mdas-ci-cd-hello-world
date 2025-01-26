@@ -127,8 +127,6 @@ jobs:
       run: |
         echo "IMAGE_TAGS=latest ${GITHUB_SHA::12}" | tee -a $GITHUB_ENV
 
-    # The path the image was pushed to is now stored in ${{ steps.push-image.outputs.registry-path }}
-
     - name: Install oc
       uses: redhat-actions/openshift-tools-installer@v1
       with:
