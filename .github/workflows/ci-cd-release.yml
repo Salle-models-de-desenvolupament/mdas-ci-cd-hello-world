@@ -58,8 +58,7 @@ jobs:
             echo "Failed to determine version" >&2
             exit 1
           fi
-          echo "IMAGE_TAGS=$VERSION-${GITHUB_SHA::12} latest" >> $GITHUB_ENV
-          echo "BUILD_IMAGE_TAG=$VERSION-${GITHUB_SHA::12}" >> $GITHUB_ENV
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
       - name: Perform release
         id: perform_release
         env:
@@ -287,7 +286,7 @@ jobs:
 
     - name: Deploy application
       run: |
-        oc new-app ${{ env.IMAGE_REGISTRY }}/${{ env.APP_NAME }}:${{ env.BUILD_IMAGE_TAG }} \
+        oc new-app ${{ env.IMAGE_REGISTRY }}/${{ env.APP_NAME }}:${{ steps.versioning.outputs.version }} \
           --name=${{ env.APP_NAME }} \
           -n ${{ env.OPENSHIFT_NAMESPACE }}
 
