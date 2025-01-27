@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.2.6...v1.2.7) (2025-01-27)
+
+
+### Bug Fixes
+
+* **ci:** reference version env ([d350fa3](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/d350fa3a3d2d3b8b0d415108193a03ad26dacbca))
+
 ## [1.2.6](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.2.5...v1.2.6) (2025-01-27)
 
 
