@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.3.1...v1.3.2) (2025-01-27)
+
+
+### Bug Fixes
+
+* **ci/cd:** change incorrect reference to version tag ([b24b027](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/b24b0277e172248b098fdae418a466edc24e61f5))
+
 ## [1.3.1](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.3.0...v1.3.1) (2025-01-27)
 
 
