@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.3.3...v1.3.4) (2025-01-27)
+
+
+### Bug Fixes
+
+* debug pipeline ([4873272](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/4873272be0a738c70a1b3b9eb49f1ca2f35cc956))
+
 ## [1.3.3](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.3.2...v1.3.3) (2025-01-27)
 
 
