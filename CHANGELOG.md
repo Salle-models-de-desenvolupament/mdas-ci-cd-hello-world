@@ -1,3 +1,11 @@
+## [1.2.6](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.2.5...v1.2.6) (2025-01-27)
+
+
+### Bug Fixes
+
+* **ci:** reference version env ([4900564](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/49005640fa45d194ab2ac60c324a06feaf2a9af1))
+* remove unrequired file ([5b600a1](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/5b600a1a8e45971c7a60793d2a13c551c4926d51))
+
 ## [1.2.5](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.2.4...v1.2.5) (2025-01-27)
 
 
