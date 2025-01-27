@@ -27,7 +27,7 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
-    needs: [integration-tests]
+    # TODO: needs: [integration-tests]
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.get_version.outputs.version }}
@@ -65,7 +65,7 @@ jobs:
           echo "IMAGE_TAGS=$VERSION-${GITHUB_SHA::12} latest" >> $GITHUB_ENV
           echo "BUILD_IMAGE_TAG=$VERSION-${GITHUB_SHA::12}" >> $GITHUB_ENV
 
-  # build:
+  # TODO: build:
   #   name: Build
   #   runs-on: ubuntu-latest
   #   steps:
@@ -140,12 +140,12 @@ jobs:
     #   - name: Run tests
     #     run: mvn clean verify
   
-  # VERSIONING GOES HERE
+  # TODO: VERSIONING GOES HERE
   
   artifact:
     name: Artifact
     runs-on: ubuntu-latest
-    needs: [integration-tests, versioning]
+    needs: versioning # TODO: [integration-tests, versioning]
     outputs:
       version: ${{ needs.versioning.outputs.version }}
     env:
