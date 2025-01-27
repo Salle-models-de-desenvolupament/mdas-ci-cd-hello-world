@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.3.4...v1.4.0) (2025-01-27)
+
+
+### Features
+
+* **ci/cd:** add commit sha on version ([a97fcb3](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/a97fcb35732762600262a1237a7f3e966ffc5e1f))
+
 ## [1.3.4](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.3.3...v1.3.4) (2025-01-27)
 
 
