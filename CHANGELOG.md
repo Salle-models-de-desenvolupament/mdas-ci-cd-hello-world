@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.2.3...v1.2.4) (2025-01-27)
+
+
+### Bug Fixes
+
+* **ci/cd:** semantic version for artifact & openshift ([7dcfad0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/7dcfad04bf827d33c57f520aa3ec248309722838))
+
 ## [1.2.3](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.2.2...v1.2.3) (2025-01-26)
 
 
