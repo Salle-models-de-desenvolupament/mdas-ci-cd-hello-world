@@ -12,7 +12,7 @@ env:
 
   APP_NAME: ""
   IMAGE_TAGS: ""
-  DEPLOY_IMAGE_TAG: ""
+  BUILD_IMAGE_TAG: ""
 
 on:
   push:
@@ -133,7 +133,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VERSION=$(npx semantic-release --dry-run | grep "next release" | awk '{print $4}')
-          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "IMAGE_TAGS=$VERSION-${GITHUB_SHA::12} latest" | tee -a $GITHUB_ENV
+          echo "BUILD_IMAGE_TAG=$VERSION-${GITHUB_SHA::12}" | tee -a $GITHUB_ENV
   
   artifact:
     name: Artifact
@@ -156,12 +157,6 @@ jobs:
         if: env.APP_NAME == ''
         run: |
           echo "APP_NAME=$(basename $PWD)" | tee -a $GITHUB_ENV
-      - name: Determine image tags
-        if: env.IMAGE_TAGS == ''
-        run: |
-          SEMVER_TAG=${{ env.VERSION }}
-          echo "IMAGE_TAGS=$SEMVER_TAG $SEMVER_TAG-${GITHUB_SHA::12}" | tee -a $GITHUB_ENV
-          echo "DEPLOY_IMAGE_TAG=$SEMVER_TAG-${GITHUB_SHA::12}" | tee -a $GITHUB_ENV
       - name: Build from Dockerfile
         id: build-image
         uses: redhat-actions/buildah-build@v2
@@ -189,7 +184,7 @@ jobs:
     needs: [artifact]
     env:
       VERSION: ${{ needs.artifact.outputs.version }}
-      
+
     outputs:
       ROUTE: ${{ steps.deploy-and-expose.outputs.route }}
       SELECTOR: ${{ steps.deploy-and-expose.outputs.selector }}
@@ -251,12 +246,6 @@ jobs:
       run: |
         echo "APP_NAME=$(basename $PWD)" | tee -a $GITHUB_ENV
 
-    - name: Determine image tags
-      if: env.IMAGE_TAGS == ''
-      run: |
-        echo "IMAGE_TAGS=latest ${GITHUB_SHA::12}" | tee -a $GITHUB_ENV
-        echo "DEPLOY_IMAGE_TAG=${GITHUB_SHA::12}" | tee -a $GITHUB_ENV
-
     - name: Build from Dockerfile
       id: build-image
       uses: redhat-actions/buildah-build@v2
@@ -295,7 +284,7 @@ jobs:
 
     - name: Deploy application
       run: |
-        oc new-app ${{ env.IMAGE_REGISTRY }}/${{ env.APP_NAME }}:${{ env.VERSION }} \
+        oc new-app ${{ env.IMAGE_REGISTRY }}/${{ env.APP_NAME }}:${{ env.BUILD_IMAGE_TAG }} \
           --name=${{ env.APP_NAME }} \
           -n ${{ env.OPENSHIFT_NAMESPACE }}
 
