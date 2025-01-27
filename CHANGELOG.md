@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.3.0...v1.3.1) (2025-01-27)
+
+
+### Bug Fixes
+
+* **build:** add compilation step ([411aadd](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/411aadd8516704807d144fccf38f918546224f84))
+
 # [1.3.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.2.8...v1.3.0) (2025-01-27)
 
 
