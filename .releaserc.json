@@ -5,10 +5,11 @@
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     [
-      "@semantic-release/exec",
-      {
-        "successCmd": "echo ${nextRelease.version} > .version"
-      }
+      "@semantic-release/exec", {
+        "verifyConditionsCmd": "./verify.sh",
+        "publishCmd": "echo ${nextRelease.version} > .version"
+    
+        }
     ],
     [
       "@semantic-release/git",
