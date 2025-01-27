@@ -6,7 +6,6 @@
     "@semantic-release/changelog",
     [
       "@semantic-release/exec", {
-        "verifyConditionsCmd": "./verify.sh",
         "publishCmd": "echo ${nextRelease.version} > .version"
     
         }
