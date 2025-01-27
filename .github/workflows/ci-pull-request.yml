@@ -1,8 +1,11 @@
 name: CI Pull Request
+
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+
 jobs:
+
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -23,6 +26,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build
         run: mvn clean install
+  
   unit-tests-sonar:
     name: Unit tests & Sonar
     runs-on: ubuntu-latest
@@ -50,12 +54,11 @@ jobs:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
-      - name: JaCoCo report
-        run: mvn jacoco:report -Pcoverage
       - name: SonarCloud Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Pcoverage -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco-report/jacoco.xml
+  
   integration-tests:
     name: Integration tests
     runs-on: ubuntu-latest
@@ -77,6 +80,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests
         run: mvn clean verify
+  
   security:
     name: SNYK (Security)
     runs-on: ubuntu-latest
