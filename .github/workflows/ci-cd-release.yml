@@ -52,6 +52,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
+      - name: dry run
+        run: npx semantic-release --dry-run
       - name: Obtener versión
         id: get_version
         env:
