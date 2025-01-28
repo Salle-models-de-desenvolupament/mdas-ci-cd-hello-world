@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.5.0...v2.0.0) (2025-01-28)
+
+
+### Features
+
+* **api:** change api response ([eedc24c](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/eedc24c390b02ff51929a2c70929c2f3779194cc))
+
+
+### BREAKING CHANGES
+
+* **api:** Updated the message for the endpoint /hello, as users prefer the classic hello world message
+
 # [1.5.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.4.1...v1.5.0) (2025-01-28)
 
 
