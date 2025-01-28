@@ -1,3 +1,11 @@
+## [2.5.3](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.5.2...v2.5.3) (2025-01-28)
+
+
+### Bug Fixes
+
+* **ci/cd:** refactor ci/cd sonar ([0493669](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/04936698868c00594e06f87a9f8b8d7f9f8cddfa))
+* **ci/cd:** refactor ci/cd sonar ([f793654](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/f7936541dd1c88b56121ed5581613051c6086a83))
+
 ## [2.5.2](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.5.1...v2.5.2) (2025-01-28)
 
 
