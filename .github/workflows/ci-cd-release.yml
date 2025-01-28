@@ -9,7 +9,6 @@ env:
   OPENSHIFT_TOKEN: ${{ secrets.OPENSHIFT_TOKEN }}
   OPENSHIFT_NAMESPACE: "ivan-jimeno-ramirez1-dev"
 
-
   APP_NAME: ""
 
 on:
