@@ -111,7 +111,7 @@ jobs:
   artifact:
     name: Artifact
     runs-on: ubuntu-latest
-    needs: [versioning]
+    # needs: [versioning]
     outputs:
       version: ${{ needs.versioning.outputs.version }}
     steps:
