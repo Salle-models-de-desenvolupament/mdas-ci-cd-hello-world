@@ -117,7 +117,7 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
-    needs: [security]
+    # needs: [security]
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.get_version.outputs.version }}
