@@ -128,6 +128,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: target
+      - run: zip -r target.zip target
 
       - name: Debug downloaded artifact
         run: ls -R target
