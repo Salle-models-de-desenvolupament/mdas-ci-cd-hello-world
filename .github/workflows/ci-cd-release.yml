@@ -44,6 +44,7 @@ jobs:
         run: |
           mvn clean verify sonar:sonar \
           -P coverage \
+          -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco-report/jacoco.xml \
           -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
