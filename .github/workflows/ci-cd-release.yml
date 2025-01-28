@@ -9,10 +9,8 @@ env:
   OPENSHIFT_TOKEN: ${{ secrets.OPENSHIFT_TOKEN }}
   OPENSHIFT_NAMESPACE: "ivan-jimeno-ramirez1-dev"
 
-  # Nombre de la route que quieres exponer (ajusta según tu caso)
   ROUTE_NAME: "helloworld"
 
-  # Si no lo pones tú, tomará el nombre de la carpeta actual (basename) en 'Determine app name'
   APP_NAME: ""
 
 on:
@@ -209,12 +207,6 @@ jobs:
     environment: production
     needs: [artifact]
 
-    # Si quieres exponer ROUTE o SELECTOR como outputs, puedes hacerlo
-    # (aquí lo hemos omitido por simplicidad)
-    # outputs:
-    #   ROUTE: ${{ steps.deploy-and-expose.outputs.route }}
-    #   SELECTOR: ${{ steps.deploy-and-expose.outputs.selector }}
-
     steps:
       - name: Check for required secrets
         uses: actions/github-script@v6
@@ -287,64 +279,50 @@ jobs:
 
       - name: Blue-Green Deployment
         run: |
-          # Comprueba si existe la Route
-          # Si no existe, ROUTE_DEST estará vacío; si existe, contendrá "APPNAME-blue" o "APPNAME-green"
           ROUTE_DEST=$(oc get route ${{ env.ROUTE_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }} \
             -o jsonpath="{.spec.to.name}" --ignore-not-found)
 
           echo "Route actual: '${ROUTE_DEST}' (vacío si no existe)"
 
           if [ -z "$ROUTE_DEST" ]; then
-            echo "La Route ${{ env.ROUTE_NAME }} NO existe. Creando despliegue inicial en BLUE..."
-            # Asegúrate de limpiar lo que pudiera existir en BLUE, por si acaso:
+            echo "The Route ${{ env.ROUTE_NAME }} DOES NOT exist. Deploying BLUE"
             oc delete deployment,service,route -l app=${{ env.APP_NAME }}-blue \
               -n ${{ env.OPENSHIFT_NAMESPACE }} --ignore-not-found=true
 
-            # Creamos app en BLUE
             oc new-app ${{ env.IMAGE_REGISTRY }}/${{ env.APP_NAME }}:${{ needs.artifact.outputs.version }} \
               --name=${{ env.APP_NAME }}-blue \
               -n ${{ env.OPENSHIFT_NAMESPACE }}
 
-            # Esperamos a que se complete el rollout
             oc rollout status deployment/${{ env.APP_NAME }}-blue -n ${{ env.OPENSHIFT_NAMESPACE }}
 
-            # Exponemos la nueva app con la route $ROUTE_NAME
             oc expose service ${{ env.APP_NAME }}-blue --name=${{ env.ROUTE_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }}
 
           else
             if [ "$ROUTE_DEST" = "${{ env.APP_NAME }}-blue" ]; then
               echo "La Route apunta a BLUE. Desplegamos la nueva versión en GREEN."
-              # Limpiamos despliegues anteriores en GREEN
               oc delete deployment,service -l app=${{ env.APP_NAME }}-green \
                 -n ${{ env.OPENSHIFT_NAMESPACE }} --ignore-not-found=true
 
-              # Desplegamos en GREEN
               oc new-app ${{ env.IMAGE_REGISTRY }}/${{ env.APP_NAME }}:${{ needs.artifact.outputs.version }} \
                 --name=${{ env.APP_NAME }}-green \
                 -n ${{ env.OPENSHIFT_NAMESPACE }}
 
-              # Esperamos a que se complete el rollout
               oc rollout status deployment/${{ env.APP_NAME }}-green -n ${{ env.OPENSHIFT_NAMESPACE }}
 
-              # Actualizamos la route para que apunte a GREEN
               oc patch route/${{ env.ROUTE_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }} \
                 -p "{\"spec\":{\"to\":{\"name\":\"${{ env.APP_NAME }}-green\"}}}"
 
             else
               echo "La Route apunta a GREEN. Desplegamos la nueva versión en BLUE."
-              # Limpiamos despliegues anteriores en BLUE
               oc delete deployment,service -l app=${{ env.APP_NAME }}-blue \
                 -n ${{ env.OPENSHIFT_NAMESPACE }} --ignore-not-found=true
 
-              # Desplegamos en BLUE
               oc new-app ${{ env.IMAGE_REGISTRY }}/${{ env.APP_NAME }}:${{ needs.artifact.outputs.version }} \
                 --name=${{ env.APP_NAME }}-blue \
                 -n ${{ env.OPENSHIFT_NAMESPACE }}
 
-              # Esperamos a que se complete el rollout
               oc rollout status deployment/${{ env.APP_NAME }}-blue -n ${{ env.OPENSHIFT_NAMESPACE }}
 
-              # Actualizamos la route para que apunte a BLUE
               oc patch route/${{ env.ROUTE_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }} \
                 -p "{\"spec\":{\"to\":{\"name\":\"${{ env.APP_NAME }}-blue\"}}}"
             fi
