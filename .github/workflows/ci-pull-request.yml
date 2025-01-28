@@ -1,8 +1,11 @@
 name: CI Pull Request
+
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+
 jobs:
+
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -22,7 +25,8 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Build
-        run: mvn clean install
+        run: mvn clean install -DskipUTs=true -DskipITs=true
+  
   unit-tests-sonar:
     name: Unit tests & Sonar
     runs-on: ubuntu-latest
@@ -50,12 +54,12 @@ jobs:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
-      - name: JaCoCo report
-        run: mvn jacoco:report -Pcoverage
       - name: SonarCloud Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Pcoverage -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+        run: mvn sonar:sonar -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco-report/jacoco.xml -DskipTests=true
+
+  
   integration-tests:
     name: Integration tests
     runs-on: ubuntu-latest
@@ -76,7 +80,8 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests
-        run: mvn clean verify
+        run: mvn clean verify -DskipUTs=true
+  
   security:
     name: SNYK (Security)
     runs-on: ubuntu-latest
@@ -85,5 +90,12 @@ jobs:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/maven@master
+        continue-on-error: true # To make sure that SARIF upload gets called
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --sarif-file-output=snyk.sarif
+      - name: Upload result to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: snyk.sarif
