@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.4.1...v1.5.0) (2025-01-28)
+
+
+### Features
+
+* **blue-green:** Add blue green to pipeline ([eac69a5](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/eac69a56513b10d76e2fd3967e0e92d18d7b605e))
+
 ## [1.4.1](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.4.0...v1.4.1) (2025-01-28)
 
 
