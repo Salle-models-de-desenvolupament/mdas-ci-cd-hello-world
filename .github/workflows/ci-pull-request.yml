@@ -58,7 +58,6 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn sonar:sonar -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco-report/jacoco.xml -DskipTests=true
-
   
   integration-tests:
     name: Integration tests

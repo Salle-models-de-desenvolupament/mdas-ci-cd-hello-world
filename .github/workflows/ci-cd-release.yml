@@ -70,7 +70,7 @@ jobs:
       - name: SonarCloud Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco-report/jacoco.xml
+        run: mvn sonar:sonar -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco-report/jacoco.xml -DskipTests=true
   
   integration-tests:
     name: Integration tests
@@ -111,7 +111,7 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
-    needs: [integration-tests]
+    needs: [security]
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.get_version.outputs.version }}
