@@ -20,8 +20,8 @@ on:
 
 jobs:
 
-  build-and-tests:
-    name: Build
+  build-tests-sonar:
+    name: Build + unit and integration tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -39,10 +39,14 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Build
-        run: mvn clean install
+        env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          mvn clean verify sonar:sonar \
+          -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world
   
   sonar:
-    name: Unit tests & Sonar
+    name: Sonar
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -73,7 +77,7 @@ jobs:
         run: mvn sonar:sonar -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco-report/jacoco.xml -DskipTests=true
   
   security:
-    name: SNYK (Security)
+    name: Security (SNYK)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -174,7 +178,7 @@ jobs:
           password: ${{ env.IMAGE_REGISTRY_PASSWORD }}
       
   openshift-ci-cd:
-    name: Build and deploy to OpenShift (Blue-Green)
+    name: Deploy to OpenShift (Blue-Green)
     runs-on: ubuntu-latest
     environment: production
     needs: [artifact]
