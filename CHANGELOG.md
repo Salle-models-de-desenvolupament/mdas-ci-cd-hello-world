@@ -1,3 +1,10 @@
+## [2.5.4](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.5.3...v2.5.4) (2025-01-28)
+
+
+### Bug Fixes
+
+* **ci/cd:** refactor ci/cd sonar coverage ([d535d5f](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/d535d5fbd321e7a4effbbf63979838b045ecac42))
+
 ## [2.5.3](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.5.2...v2.5.3) (2025-01-28)
 
 
