@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.4.0...v1.4.1) (2025-01-28)
+
+
+### Bug Fixes
+
+* remove unrequired line ([e8b9d63](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/e8b9d6360a84f18255276c37531da78dfe12fb63))
+
 # [1.4.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.3.4...v1.4.0) (2025-01-27)
 
 
