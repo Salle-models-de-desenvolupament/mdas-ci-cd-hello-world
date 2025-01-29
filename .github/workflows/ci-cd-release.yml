@@ -7,9 +7,8 @@ env:
 
   OPENSHIFT_SERVER: ${{ secrets.OPENSHIFT_SERVER }}
   OPENSHIFT_TOKEN: ${{ secrets.OPENSHIFT_TOKEN }}
-  OPENSHIFT_NAMESPACE: "ivan-jimeno-ramirez1-dev"
-
-  ROUTE_NAME: "helloworld"
+  OPENSHIFT_NAMESPACE: ${{ secrets.OPENSHIFT_NAMESPACE }}
+  OPENSHIFT_ROUTE_NAME: ${{ secrets.OPENSHIFT_ROUTE_NAME }}
 
   APP_NAME: ""
 
@@ -44,11 +43,12 @@ jobs:
       - name: Sonar
         env:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
         run: |
           mvn sonar:sonar \
           -Dsonar.qualitygate.wait=true \
           -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco-report/jacoco.xml \
-          -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world
+          -Dsonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -223,13 +223,13 @@ jobs:
 
       - name: Blue-Green Deployment
         run: |
-          ROUTE_DEST=$(oc get route ${{ env.ROUTE_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }} \
+          ROUTE_DEST=$(oc get route ${{ env.OPENSHIFT_ROUTE_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }} \
             -o jsonpath="{.spec.to.name}" --ignore-not-found)
 
           echo "Current route: '${ROUTE_DEST}' (empty if not found)"
 
           if [ -z "$ROUTE_DEST" ]; then
-            echo "The Route ${{ env.ROUTE_NAME }} DOES NOT exist. Deploying BLUE"
+            echo "The Route ${{ env.OPENSHIFT_ROUTE_NAME }} DOES NOT exist. Deploying BLUE"
             oc delete deployment,service,route -l app=${{ env.APP_NAME }}-blue \
               -n ${{ env.OPENSHIFT_NAMESPACE }} --ignore-not-found=true
 
@@ -239,7 +239,7 @@ jobs:
 
             oc rollout status deployment/${{ env.APP_NAME }}-blue -n ${{ env.OPENSHIFT_NAMESPACE }}
 
-            oc expose service ${{ env.APP_NAME }}-blue --name=${{ env.ROUTE_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }}
+            oc expose service ${{ env.APP_NAME }}-blue --name=${{ env.OPENSHIFT_ROUTE_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }}
 
           else
             if [ "$ROUTE_DEST" = "${{ env.APP_NAME }}-blue" ]; then
@@ -253,7 +253,7 @@ jobs:
 
               oc rollout status deployment/${{ env.APP_NAME }}-green -n ${{ env.OPENSHIFT_NAMESPACE }}
 
-              oc patch route/${{ env.ROUTE_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }} \
+              oc patch route/${{ env.OPENSHIFT_ROUTE_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }} \
                 -p "{\"spec\":{\"to\":{\"name\":\"${{ env.APP_NAME }}-green\"}}}"
 
             else
@@ -267,7 +267,7 @@ jobs:
 
               oc rollout status deployment/${{ env.APP_NAME }}-blue -n ${{ env.OPENSHIFT_NAMESPACE }}
 
-              oc patch route/${{ env.ROUTE_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }} \
+              oc patch route/${{ env.OPENSHIFT_ROUTE_NAME }} -n ${{ env.OPENSHIFT_NAMESPACE }} \
                 -p "{\"spec\":{\"to\":{\"name\":\"${{ env.APP_NAME }}-blue\"}}}"
             fi
           fi
