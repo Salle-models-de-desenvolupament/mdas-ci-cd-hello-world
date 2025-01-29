@@ -13,4 +13,11 @@ public class GreetingResource {
     public String hello() {
         return "Hello world";
     }
+
+    @GET
+    @Path("/test")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String greet() {
+        return "Missing tests!";
+    }
 }
