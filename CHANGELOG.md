@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.6.0...v2.6.1) (2025-01-29)
+
+
+### Bug Fixes
+
+* **cd:** artifact checkout ([344fdb3](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/344fdb3c690c7fc1d8a03496a9ecad5af8e556b4))
+
 # [2.6.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.5.6...v2.6.0) (2025-01-29)
 
 
