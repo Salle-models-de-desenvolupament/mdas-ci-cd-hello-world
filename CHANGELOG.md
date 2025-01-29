@@ -1,3 +1,20 @@
+## [2.5.6](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.5.5...v2.5.6) (2025-01-29)
+
+
+### Bug Fixes
+
+* **ci/cd:** add downloaded artifact on target folder ([69b84ec](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/69b84ecff3e796e0b526967ace0b3b889f7631db))
+* **ci/cd:** check artifact ([4ce710d](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/4ce710daabbf4dd5356f901220c9c2ea83666b77))
+* **ci/cd:** check artifact ([af2f987](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/af2f987869dc6e5007b3f0fe628ab716f600a163))
+* **ci/cd:** refactor ci/cd sonar coverage ([a03f0a3](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/a03f0a3b916f6734a090f60b094f662ea34bc564))
+* **ci/cd:** refactor ci/cd sonar coverage ([5c964b5](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/5c964b5c4dea9abb7aa082917bbd19c2999df8d1))
+* **ci/cd:** refactor ci/cd sonar coverage ([4ff7837](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/4ff78379cc3239a3ceeb0e82e7f279d66ea4ff3e))
+* **ci/cd:** refactor ci/cd sonar coverage ([7352d2a](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/7352d2aa1dbcc3c26bad1e224c2816a8c6555680))
+* **ci/cd:** reuse build between jobs ([33acfd4](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/33acfd44edd4e04daa88b314abb4b4077a62983b))
+* **ci/cd:** reuse build between jobs ([5164b8b](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/5164b8bbbc42af778b1ea34fde87ab700301fe24))
+* **ci/cd:** unzip downloaded artifact ([c2cd2cd](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/c2cd2cd3174ae94c8c3cbdb514651e37e69cb7ab))
+* **ci/cd:** verify artifact download ([7b2093f](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/7b2093f3333c97a31b2c0cc23ebb4c180c5e1166))
+
 ## [2.5.5](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.5.4...v2.5.5) (2025-01-28)
 
 
