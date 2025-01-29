@@ -1,3 +1,10 @@
+## [2.7.1](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.7.0...v2.7.1) (2025-01-29)
+
+
+### Bug Fixes
+
+* add dependency ([19d1d68](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/19d1d68d9d29deeeef10605c1f81b615c8b06ed9))
+
 # [2.7.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.6.1...v2.7.0) (2025-01-29)
 
 
