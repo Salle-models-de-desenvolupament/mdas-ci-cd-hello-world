@@ -1,3 +1,16 @@
+# [2.6.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.5.6...v2.6.0) (2025-01-29)
+
+
+### Bug Fixes
+
+* **ci/cd:** remove java setup on unrequired steps ([25f5559](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/25f5559ac683ed922c04bfcaeef3a9a9ef027171))
+
+
+### Features
+
+* **coverage:** reset test ([b0bf993](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/b0bf9937c075bc853278a8ef1592339325f10317))
+* **coverage:** test coverage under 80% breaks ([6cb11ed](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/6cb11edf7d241e721e1d9a7220fff7250cd5983d))
+
 ## [2.5.6](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.5.5...v2.5.6) (2025-01-29)
 
 
