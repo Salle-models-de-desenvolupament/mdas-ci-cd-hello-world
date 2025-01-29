@@ -1,3 +1,10 @@
+## [2.7.3](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.7.2...v2.7.3) (2025-01-29)
+
+
+### Bug Fixes
+
+* **cicd:** add arguments on snyk step ([99b7e78](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/99b7e78fc2e92e1133fc2a6fedcdd48ea2cb132e))
+
 ## [2.7.2](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.7.1...v2.7.2) (2025-01-29)
 
 
