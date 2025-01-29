@@ -57,7 +57,6 @@ jobs:
   security:
     name: Security (SNYK)
     runs-on: ubuntu-latest
-    if: false
     steps:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
@@ -67,7 +66,6 @@ jobs:
 
   versioning:
     name: Semantic Release versioning
-    if: false
     permissions:
       contents: write
       issues: write
@@ -115,7 +113,7 @@ jobs:
   artifact:
     name: Artifact
     runs-on: ubuntu-latest
-    needs: [build-tests-sonar]
+    needs: [versioning]
     outputs:
       version: ${{ needs.versioning.outputs.version }}
     steps:
@@ -128,14 +126,13 @@ jobs:
           java-version: 21
           distribution: 'zulu'
 
+      - run: mkdir -p target 
+
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: target
-      - run: ls
-
-      - name: Debug downloaded artifact
-        run: ls -R target
+          path: ./target
 
       - name: Determine app name
         if: env.APP_NAME == ''
