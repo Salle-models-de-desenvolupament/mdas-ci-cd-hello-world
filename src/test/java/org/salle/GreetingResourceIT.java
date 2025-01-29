@@ -8,12 +8,4 @@ import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusIntegrationTest
 class GreetingResourceIT {
-    // @Test
-    // void testHelloEndpoint() {
-    // given()
-    // .when().get("/hello")
-    // .then()
-    // .statusCode(200)
-    // .body(is("Hello world"));
-    // }
 }
