@@ -1,3 +1,10 @@
+## [2.8.1](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.8.0...v2.8.1) (2025-01-29)
+
+
+### Bug Fixes
+
+* **greeting:** update response message ([995f86e](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/995f86e5aa92add4ccfa41a0d9dc208be895a64a))
+
 # [2.8.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.7.3...v2.8.0) (2025-01-29)
 
 
