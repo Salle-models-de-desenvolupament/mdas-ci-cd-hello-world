@@ -113,6 +113,9 @@ jobs:
     outputs:
       version: ${{ needs.versioning.outputs.version }}
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - run: mkdir -p target 
 
