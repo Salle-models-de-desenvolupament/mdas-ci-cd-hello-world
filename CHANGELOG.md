@@ -1,3 +1,15 @@
+# [2.8.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.7.3...v2.8.0) (2025-01-29)
+
+
+### Bug Fixes
+
+* **cicd:** add path argument  on snyk step ([9f1ebee](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/9f1ebee44ab98ee68f668278c70c4d11607e9ba0))
+
+
+### Features
+
+* **ci/cd:** add secret reference for oc dependencies ([d9e3116](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/d9e311657af9e08c75e899d02ed6427508b72df0))
+
 ## [2.7.3](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.7.2...v2.7.3) (2025-01-29)
 
 
