@@ -46,6 +46,7 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           mvn sonar:sonar \
+          -Dsonar.qualitygate.wait=true \
           -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco-report/jacoco.xml \
           -Dsonar.projectKey=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world
       - name: Upload artifacts
