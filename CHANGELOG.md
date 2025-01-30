@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.9.0...v3.0.0) (2025-01-30)
+
+
+### Features
+
+* **greeting:** change response ([42869a3](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/42869a36e10b0bae1cd19b79b8afaa7bdb715ca0))
+
+
+### BREAKING CHANGES
+
+* **greeting:** The endpoint /hello now returns Hello world
+
 # [2.9.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.8.1...v2.9.0) (2025-01-30)
 
 
