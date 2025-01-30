@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v3.0.0...v3.1.0) (2025-01-30)
+
+
+### Features
+
+* **greeting:** change response message ([364ee3b](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/364ee3ba56815662efcfb2dddf2ad2a3f0555ad0))
+
 # [3.0.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.9.0...v3.0.0) (2025-01-30)
 
 
