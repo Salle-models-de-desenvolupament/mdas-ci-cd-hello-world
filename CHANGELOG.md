@@ -175,7 +175,7 @@
 
 ### Features
 
-* **api:** Change message to 'hello world' ([ad3539b](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/ad3539b591b89c82d19a22b63b46c5184bce7bca))
+* **api:** Change message to 'Hello world!' ([ad3539b](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/ad3539b591b89c82d19a22b63b46c5184bce7bca))
 
 # [2.0.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.5.0...v2.0.0) (2025-01-28)
 
@@ -187,7 +187,7 @@
 
 ### BREAKING CHANGES
 
-* **api:** Updated the message for the endpoint /hello, as users prefer the classic hello world message
+* **api:** Updated the message for the endpoint /hello, as users prefer the classic Hello world! message
 
 # [1.5.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v1.4.1...v1.5.0) (2025-01-28)
 
@@ -364,6 +364,6 @@
 ### Features
 
 * add base project structure ([b2362d2](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/b2362d2bcf6d82d481dd672f235ef8d74d8f0ba6))
-* **api:** hello world endpoint ([69a2949](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/69a294935720ef64839a1a0b5df9c625aed38b88))
+* **api:** Hello world! endpoint ([69a2949](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/69a294935720ef64839a1a0b5df9c625aed38b88))
 * **build:** add cd pipeline ([4959a01](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/4959a015c7e975bd30bcbfc7996f363ca07d0f55))
 * **cd:** run cd when ci release finishes ([d3c9018](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/d3c90183596c8ff08cffba6ec8a333329a86d08d))

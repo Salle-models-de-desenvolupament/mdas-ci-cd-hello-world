@@ -11,7 +11,7 @@ class GreetingResourceTest {
     void testHelloEndpoint() {
         GreetingResource greetingResource = new GreetingResource();
         String response = greetingResource.hello();
-        Assertions.assertThat(response).isEqualTo("Hello world");
+        Assertions.assertThat(response).isEqualTo("Hello world!");
     }
 
 }
