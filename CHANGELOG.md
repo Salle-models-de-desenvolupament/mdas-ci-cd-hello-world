@@ -1,3 +1,17 @@
+# [2.9.0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.8.1...v2.9.0) (2025-01-30)
+
+
+### Bug Fixes
+
+* delete tests ([2782c86](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/2782c8609382b8534f0963240a6cbecfff77641e))
+* delete unrequired endpoint ([7d11ddd](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/7d11ddd133dace669416d0c65bf60d7e75b80bb2))
+* remove tests ([cd3a629](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/cd3a6294259165d44ba0ed26ce885b64cea1dc88))
+
+
+### Features
+
+* **ci:** update sonar process ([2525cb0](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/commit/2525cb0129db1905095843f1bae76867afe0012b))
+
 ## [2.8.1](https://github.com/Salle-models-de-desenvolupament/mdas-ci-cd-hello-world/compare/v2.8.0...v2.8.1) (2025-01-29)
 
 
