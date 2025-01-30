@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world&metric=alert_status&token=0dafa18959f8075bee261a0f241fdbd388ecbd97)](https://sonarcloud.io/summary/new_code?id=Salle-models-de-desenvolupament_mdas-ci-cd-hello-world)
+
 # mdas-hello-world
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
@@ -12,7 +14,7 @@ You can run your application in dev mode that enables live coding using:
 ./mvnw quarkus:dev
 ```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
+> **_NOTE:_** Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
 
 ## Packaging and running the application
 
